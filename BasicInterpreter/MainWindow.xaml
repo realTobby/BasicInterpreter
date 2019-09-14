@@ -1,0 +1,24 @@
+﻿<Window x:Class="BasicInterpreter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BasicInterpreter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar>
+                    <Button x:Name="toolbarButton_new" Content="New" Click="ToolbarButton_new_Click"/>
+                    <Button x:Name="toolbarButton_open" Content="Open" Click="ToolbarButton_open_Click"/>
+                    <Button x:Name="toolbarButton_save" Content="Save" Click="ToolbarButton_save_Click" />
+                    <Button x:Name="toolbarButton_export" Content="Export" Click="ToolbarButton_export_Click"/>
+                    <Label x:Name="labelFilePath" Content="{Binding FilePath, UpdateSourceTrigger=PropertyChanged}"/>
+                </ToolBar>
+            </ToolBarTray>
+
+            <TextBox x:Name="textEditor" Text="{Binding BasicCode, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True"/>
+        </DockPanel>
+    </Grid>
+</Window>
